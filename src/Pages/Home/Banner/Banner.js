@@ -34,7 +34,10 @@ const Banner = () => {
               sit placeat cum incidunt eveniet officiis et non esse numquam
               quibusdam?
             </Typography>
-            <Button style={{ backgroundColor: "	#59c7f2" }} variant="contained">
+            <Button
+              style={{ backgroundColor: "	#59c7f2", fontWeight: 600 }}
+              variant="contained"
+            >
               Get Appointment
             </Button>
           </Box>

@@ -7,7 +7,7 @@ const About = () => {
     <div>
       <Grid sx={{ mt: 5 }} container spacing={2}>
         <Grid item xs={12} md={6}>
-          <img style={{ width: "70%", height: '75%' }} src={treatment} alt="" />
+          <img style={{ width: "70%", height: "75%" }} src={treatment} alt="" />
         </Grid>
         <Grid item xs={12} md={6}>
           <Box sx={{ my: "auto" }}>
@@ -38,6 +38,7 @@ const About = () => {
                 style={{
                   backgroundColor: "#59c7f2",
                   marginTop: "2rem",
+                  fontWeight: 600
                 }}
                 variant="contained"
               >
