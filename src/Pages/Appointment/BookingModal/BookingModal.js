@@ -22,6 +22,12 @@ const style = {
 const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
   const { name, time } = booking;
 
+  const handleBookingSubmit = e => {
+      alert("submitting");
+      handleBookingClose();
+      e.preventDefault();
+  }
+
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -39,7 +45,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
           <Typography id="transition-modal-title" variant="h6" component="h2">
             {name}
           </Typography>
-          <form>
+          <form onSubmit={handleBookingSubmit}>
             <TextField
               disabled
               sx={{ width: "90%", m: 1 }}

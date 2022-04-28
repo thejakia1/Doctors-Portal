@@ -8,12 +8,16 @@ import {
 } from "react-router-dom"
 import Home from './Pages/Home/Home/Home';
 import Appointment from './Pages/Appointment/Appointment/Appointment';
+import Login from './Pages/Login/Login/Login';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
           <Route path="/appointment">
             <Appointment />
           </Route>
