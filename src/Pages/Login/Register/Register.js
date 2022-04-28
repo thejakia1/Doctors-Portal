@@ -3,20 +3,7 @@ import { Container, Grid, Typography, TextField, Button } from "@mui/material";
 import login from "../../../images/login.png";
 import { NavLink } from "react-router-dom";
 
-const Login = () => {
-  const [loginData, setLoginData] = useState({});
-
-  const handleOnChange = (e) => {
-    const field = e.target.name;
-    const value = e.target.value;
-    const newLoginData = { ...loginData };
-    newLoginData[field] = value;
-    setLoginData(newLoginData);
-  };
-  const handleLoginSubmit = (e) => {
-    alert("hello");
-    e.preventDefault();
-  };
+const Register = () => {
   return (
     <Container>
       <Grid container spacing={2}>
@@ -24,13 +11,13 @@ const Login = () => {
           <Typography variant="body2" gutterBottom>
             Login
           </Typography>
-          <form onSubmit={handleLoginSubmit}>
+          <form>
             <TextField
               sx={{ width: "75%", m: 1 }}
               id="standard-basic"
               label="Your Email"
               name="email"
-              onChange={handleOnChange}
+              // onChange={handleOnChange}
               variant="standard"
             />
             <TextField
@@ -46,12 +33,12 @@ const Login = () => {
               variant="contained"
               type="submit"
             >
-              Login
+              Register
             </Button>
 
-            <NavLink style={{ textDecoration: "none" }} to="/register">
+            <NavLink style={{ textDecoration: "none" }} to="/login">
               <Button sx={{ width: "75%", m: 1 }} variant="text" type="submit">
-                New User? Please Register
+                Already Have an Account? Please Login
               </Button>
             </NavLink>
           </form>
@@ -64,4 +51,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

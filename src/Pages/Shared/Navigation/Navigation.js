@@ -27,10 +27,10 @@ const Navigation = () => {
             Doctors Portal
           </Typography>
           <Link to="/appointment">
-            <Button color="inherit">Appointment</Button>
+            <Button variant="contained" color="inherit">Appointment</Button>
           </Link>
           <NavLink to="/login">
-            <Button color="inherit">Login</Button>
+            <Button variant="contained" color="inherit">Login</Button>
           </NavLink>
         </Toolbar>
       </AppBar>
