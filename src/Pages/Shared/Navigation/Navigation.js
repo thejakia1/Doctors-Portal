@@ -29,17 +29,17 @@ const Navigation = () => {
             Doctors Portal
           </Typography>
           <Link to="/appointment">
-            <Button variant="contained" color="inherit">
+            <Button>
               Appointment
             </Button>
           </Link>
           {user?.email ? (
-            <Button onClick={logout} variant="contained" color="inherit">
+            <Button onClick={logout} color="inherit">
               Logout
             </Button>
           ) : (
-            <NavLink to="/login">
-              <Button variant="contained" color="inherit">
+            <NavLink style={{textDecoration: 'none', color:'white'}} to="/login">
+              <Button color="inherit">
                 Login
               </Button>
             </NavLink>
