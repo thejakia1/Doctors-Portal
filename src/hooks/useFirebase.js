@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import initializeFirebase from "../Pages/Login/Firebase/firebase.init";
+import { useEffect, useState } from "react";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -10,13 +10,14 @@ import {
 
 // initialize firebase app
 initializeFirebase();
+
 const useFirebase = () => {
   const [user, setUser] = useState({});
 
   const auth = getAuth();
 
   const registerUser = (email, password) => {
-    createUserWithEmailAndPassword()
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;

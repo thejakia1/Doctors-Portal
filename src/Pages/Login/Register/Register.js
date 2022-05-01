@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Container, Grid, Typography, TextField, Button } from "@mui/material";
 import login from "../../../images/login.png";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
+
+  const { registerUser } = useAuth();
 
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -14,10 +17,11 @@ const Register = () => {
     setLoginData(newLoginData);
   };
   const handleLoginSubmit = (e) => {
-    if(loginData.password != loginData.password2){
+    if (loginData.password != loginData.password2) {
       alert("Your password did not match");
-      return; 
+      return;
     }
+    registerUser(loginData.email, loginData.password);
     e.preventDefault();
   };
 
@@ -44,6 +48,7 @@ const Register = () => {
               label="Your Password"
               name="password"
               type="password"
+              onChange={handleOnChange}
               variant="standard"
             />
             <TextField
@@ -52,6 +57,7 @@ const Register = () => {
               label="Re-type Your Password"
               name="password2"
               type="password"
+              onChange={handleOnChange}
               variant="standard"
             />
             <Button
