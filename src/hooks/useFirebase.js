@@ -3,6 +3,7 @@ import initializeFirebase from "../Pages/Login/Login/Firebase/firebase.init";
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
@@ -25,6 +26,19 @@ const useFirebase = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
+      });
+  };
+
+  const loginUser = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
       });
   };
 
@@ -53,6 +67,8 @@ const useFirebase = () => {
   return {
     user,
     registerUser,
+    loginUser,
+    logout,
   };
 };
 
