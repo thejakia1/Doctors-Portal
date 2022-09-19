@@ -16,7 +16,7 @@ const verticalCenter = {
 
 const Banner = () => {
   return (
-    <Container style={bannerBg} sx={{ flexGrow: 1 }}>
+    <Container style={bannerBg} sx={{ flexGrow: 1, mt: 5 }}>
       <Grid container spacing={2}>
         <Grid
           item
